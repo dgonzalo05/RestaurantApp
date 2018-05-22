@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/carta_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Carta"
@@ -15,7 +15,7 @@
         tools:layout_editor_absoluteY="358dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/comanda_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Comanda"

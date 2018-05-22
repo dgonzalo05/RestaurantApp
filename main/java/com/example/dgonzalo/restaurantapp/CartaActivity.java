@@ -13,7 +13,7 @@ public class CartaActivity extends AppCompatActivity {
     private Button homeButton;
     private TextView searchText;
     private ListView viewCarta;
-    private String[] carta = {"Ensalada","Macarrones","Paella","Chuleton","Pizza","Pescado al horno","Yogurd","Helado","Trufas","Vino","Cola","Cerveza"};
+    private String[] carta = {"Ensalada","Macarrones","Paella","Chuleton","Pizza","Pescado al horno","Yogur","Helado","Trufas","Vino","Cola","Cerveza"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
