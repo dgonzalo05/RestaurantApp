@@ -17,8 +17,7 @@ public class ComandaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         final ComandaActivity self = this;
-        list_items
-        homeButton = (ImageButton) findViewById(R.id.home_button);
+        homeButton = (ImageButton)findViewById(R.id.home_button);
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

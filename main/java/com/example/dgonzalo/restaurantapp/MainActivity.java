@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        comandaButton = (Button) findViewById(R.id.comanda_button);
-        cartaButton = (Button) findViewById(R.id.carta_button);
+        comandaButton = (Button)findViewById(R.id.comanda_button);
+        cartaButton = (Button)findViewById(R.id.carta_button);
         final MainActivity self = this;
 
         comandaButton.setOnClickListener(new View.OnClickListener() {
