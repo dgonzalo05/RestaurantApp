@@ -36,7 +36,7 @@
         android:layout_height="43dp"
         android:text="Django"
         android:textAlignment="center"
-        android:textColor="0000"
+        android:textColor="@android:color/black"
         android:textSize="30sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="141dp"
@@ -48,7 +48,7 @@
         android:layout_height="33dp"
         android:text="Sang i Fetge"
         android:textAlignment="center"
-        android:textColor="0000"
+        android:textColor="@android:color/black"
         android:textSize="20sp"
         tools:layout_editor_absoluteX="134dp"
         tools:layout_editor_absoluteY="283dp" />
