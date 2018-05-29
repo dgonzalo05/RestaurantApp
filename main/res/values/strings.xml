@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DJANGO</string>
+    <string name="titol">Django</string>
+    <string name="eslogan">Sang i Fetge</string>
+    <string name="comanda_button">Comanda</string>
+    <string name="carta_button">Carta</string>
 </resources>
