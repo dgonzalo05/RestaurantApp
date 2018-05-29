@@ -19,9 +19,10 @@ public class CartaActivity extends AppCompatActivity {
     private ImageButton homeButton;
     private TextView searchInput;
     private ListView items;
-    private String[] carta = {"Ensalada","Macarrones","Paella","Chuleton","Pizza","Pescado al horno","Yogur","Helado","Trufas","Vino","Cola","Cerveza"};
+    /*private String[] carta = {"Ensalada","Macarrones","Paella","Chuleton","Pizza","Pescado al horno","Yogur","Helado","Trufas","Vino","Cola","Cerveza"};
     private ArrayList<String> listItems = new ArrayList<String>();
     private ArrayAdapter<String> adapter;
+    */
 
 
     @Override
@@ -31,7 +32,7 @@ public class CartaActivity extends AppCompatActivity {
 
 
 
-        searchInput = (TextView) findViewById(R.id.search_input);
+        /*searchInput = (TextView) findViewById(R.id.search_input);
         adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,
                 listItems);
@@ -60,10 +61,10 @@ public class CartaActivity extends AppCompatActivity {
                 Intent intent = new Intent(CartaActivity.this ,MainActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
-    public ArrayList<String> findItems (String text){
+    /*public ArrayList<String> findItems (String text){
         ArrayList<String> arr = new ArrayList<String>();
         Pattern pattern = Pattern.compile(text);
         for (String s: carta) {
@@ -72,5 +73,5 @@ public class CartaActivity extends AppCompatActivity {
             }
         }
         return arr;
-    }
+    }*/
 }
