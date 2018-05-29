@@ -14,12 +14,12 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/search_button"
-            android:layout_width="102dp"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
             android:layout_weight="1"
-            android:text="Search" />
+            app:srcCompat="@android:drawable/ic_search_category_default" />
 
         <EditText
             android:id="@+id/search_input"
