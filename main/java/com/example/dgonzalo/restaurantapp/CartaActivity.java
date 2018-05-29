@@ -29,7 +29,7 @@ public class CartaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.carta_activity);
 
-        final CartaActivity self = this;
+
 
         searchInput = (TextView) findViewById(R.id.search_input);
         adapter = new ArrayAdapter<String>(this,
@@ -57,7 +57,7 @@ public class CartaActivity extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(self ,MainActivity.class);
+                Intent intent = new Intent(CartaActivity.this ,MainActivity.class);
                 startActivity(intent);
             }
         });
