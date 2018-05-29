@@ -48,7 +48,7 @@ public class CartaActivity extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listItems = findItems(searchInput.getText().toString())
+                listItems = findItems(searchInput.getText().toString());
                 adapter.notifyDataSetChanged();
             }
         });
