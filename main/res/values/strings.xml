@@ -4,4 +4,6 @@
     <string name="eslogan">Sang i Fetge</string>
     <string name="comanda_button">Comanda</string>
     <string name="carta_button">Carta</string>
+    <string name="buy_button">Comprar</string>
+    <string name="delete_button">Treu Tot</string>
 </resources>
