@@ -17,24 +17,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        comandaButton = (Button)findViewById(R.id.comanda_button);
         cartaButton = (Button)findViewById(R.id.carta_button);
-        final MainActivity self = this;
+        comandaButton = (Button)findViewById(R.id.comanda_button);
 
         comandaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(self, ComandaActivity.class);
-                startActivity(intent);
+                changeIntent(ComandaActivity.class);
             }
         });
+
         cartaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(self, CartaActivity.class);
-                startActivity(intent);
+                changeIntent(CartaActivity.class);
             }
         });
-    }
 
+    }
+    public void changeIntent(Class c){
+        Intent intent = new Intent(this, c);
+        startActivity(intent);
+    }
 }
