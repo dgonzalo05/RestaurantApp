@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:orientation = "vertical"
     tools:context=".MainActivity"
-    android:background="#FFFFFF"
-    >
+    android:background="#FFFFFF">
 
     <ImageView
         android:id="@+id/logo"
@@ -40,13 +39,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:layout_gravity="center"
-        android:id="@+id/comanda_button"
-        android:text="@string/comanda_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/carta_button"
