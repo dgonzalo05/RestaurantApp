@@ -15,14 +15,14 @@ public class ComandaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.carta_activity);
+        setContentView(R.layout.comanda_activity);
 
         buyButton = (Button) findViewById(R.id.buy_button);
         buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(ComandaActivity.this,R.string.buy_toast, Toast.LENGTH_SHORT).show();
-                changeIntent(MainActivity.class);
+                //changeIntent(MainActivity.class);
             }
 
         });
@@ -31,7 +31,7 @@ public class ComandaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(ComandaActivity.this,R.string.delete_toast, Toast.LENGTH_SHORT).show();
-                changeIntent(MainActivity.class);
+                //changeIntent(MainActivity.class);
             }
         });
     }
