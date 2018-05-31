@@ -10,6 +10,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class ComandaActivity extends AppCompatActivity {
     private Button buyButton;
     private Button deleteButton;

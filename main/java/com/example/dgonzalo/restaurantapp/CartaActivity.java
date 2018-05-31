@@ -19,9 +19,9 @@ public class CartaActivity extends AppCompatActivity {
     private Button comandaButton;
     private ImageButton homeButton;
     private ListView listView;
-    private String[] values = {"Ensalada","Macarrones","Paella","Chuleton","Pizza","Pescado al horno","Yogur","Helado","Trufas","Vino","Cola","Cerveza"};
+    private String[] values;
     private ArrayList<String> cart = new ArrayList<String>();
-    private ArrayAdapter<String> adapter;
+    private ItemAdapter adapter;
 
 
     @Override
@@ -38,8 +38,7 @@ public class CartaActivity extends AppCompatActivity {
         // Third parameter - ID of the TextView to which the data is written
         // Forth - the Array of data
 
-        adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, values);
+        adapter = new ItemAdapter(this, crearCarta());
 
 
         // Assign adapter to ListView
@@ -53,12 +52,13 @@ public class CartaActivity extends AppCompatActivity {
                                     int position, long id) {
 
                 // ListView Clicked item value
-                String  itemValue   = (String) listView.getItemAtPosition(position);
+                ItemList item   = (ItemList) listView.getItemAtPosition(position);
+                String nombre = item.getNombre();
 
-                cart.add(itemValue);
+                cart.add(nombre);
                 // Show Alert
                 Toast.makeText(getApplicationContext(),
-                        itemValue +" afegit", Toast.LENGTH_LONG)
+                        nombre + " añadido", Toast.LENGTH_LONG)
                         .show();
             }
 
@@ -68,8 +68,7 @@ public class CartaActivity extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String[] arr = (String[])cart.toArray();
-                changeIntent(MainActivity.class, arr);
+                changeIntent(MainActivity.class);
             }
         });
 
@@ -77,7 +76,8 @@ public class CartaActivity extends AppCompatActivity {
         comandaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeIntent(ComandaActivity.class);
+                String[] arr = new String[cart.size()];
+                changeIntent(ComandaActivity.class, cart.toArray(arr));
             }
         });
     }
@@ -91,5 +91,24 @@ public class CartaActivity extends AppCompatActivity {
     public void changeIntent(Class c){
         Intent intent = new Intent(this, c);
         startActivity(intent);
+    }
+
+    private ArrayList<ItemList> crearCarta() {
+        ArrayList<ItemList> items = new ArrayList<ItemList>();
+
+        items.add(new ItemList(1, "Amanida", "Primer"));
+        items.add(new ItemList(1, "Macarrons", "Primer"));
+        items.add(new ItemList(1, "Paella", "Primer"));
+        items.add(new ItemList(2, "Entrecot", "Segon"));
+        items.add(new ItemList(2, "Pizza", "Segon"));
+        items.add(new ItemList(2, "Peix al forn", "Segon"));
+        items.add(new ItemList(3, "Iogurt", "Postre"));
+        items.add(new ItemList(3, "Gelat", "Postre"));
+        items.add(new ItemList(3, "Trufes", "Postre"));
+        items.add(new ItemList(3, "Cola", "Beguda"));
+        items.add(new ItemList(3, "Vi", "Beguda"));
+        items.add(new ItemList(3, "Cervesa", "Beguda"));
+
+        return items;
     }
 }
