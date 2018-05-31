@@ -30,7 +30,7 @@ public class CartaActivity extends AppCompatActivity {
         setContentView(R.layout.carta_activity);
 
         // Get ListView object from xml
-        listView = (ListView) findViewById(R.id.list);
+        listView = findViewById(R.id.list);
 
         // Define a new Adapter
         // First parameter - Context
@@ -64,15 +64,16 @@ public class CartaActivity extends AppCompatActivity {
 
         });
 
-        homeButton = (ImageButton) findViewById(R.id.home_button);
+        homeButton = findViewById(R.id.home_button);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeIntent(MainActivity.class);
+                String[] arr = (String[])cart.toArray();
+                changeIntent(MainActivity.class, arr);
             }
         });
 
-        comandaButton = (Button) findViewById(R.id.comanda_button);
+        comandaButton = findViewById(R.id.comanda_button);
         comandaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +85,11 @@ public class CartaActivity extends AppCompatActivity {
     public void changeIntent(Class c, String[] values){
         Intent intent = new Intent(this, c);
         intent.putExtra("carta", values);
+        startActivity(intent);
+    }
+
+    public void changeIntent(Class c){
+        Intent intent = new Intent(this, c);
         startActivity(intent);
     }
 }
