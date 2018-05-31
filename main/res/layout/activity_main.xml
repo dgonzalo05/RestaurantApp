@@ -12,7 +12,7 @@
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="301dp"
-        android:contentDescription="comida"
+        android:contentDescription="Aliments"
         android:elevation="5dp"
         android:src="@mipmap/ic_launcher" />
 
