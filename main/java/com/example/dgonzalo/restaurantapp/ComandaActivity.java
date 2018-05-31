@@ -22,7 +22,7 @@ public class ComandaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(ComandaActivity.this,R.string.buy_toast, Toast.LENGTH_SHORT).show();
-                //changeIntent(MainActivity.class);
+                changeIntent(MainActivity.class);
             }
 
         });
@@ -31,7 +31,7 @@ public class ComandaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(ComandaActivity.this,R.string.delete_toast, Toast.LENGTH_SHORT).show();
-                //changeIntent(MainActivity.class);
+                changeIntent(MainActivity.class);
             }
         });
     }

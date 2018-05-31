@@ -16,13 +16,12 @@ import java.util.regex.Pattern;
 import java.util.ArrayList;
 
 public class CartaActivity extends AppCompatActivity {
-    private Button searchButton;
     private Button comandaButton;
     private ImageButton homeButton;
-    private TextView searchInput;
     private ListView listView;
     private String[] values = {"Ensalada","Macarrones","Paella","Chuleton","Pizza","Pescado al horno","Yogur","Helado","Trufas","Vino","Cola","Cerveza"};
     private ArrayList<String> cart = new ArrayList<String>();
+    private ArrayAdapter<String> adapter;
 
 
     @Override
@@ -39,7 +38,7 @@ public class CartaActivity extends AppCompatActivity {
         // Third parameter - ID of the TextView to which the data is written
         // Forth - the Array of data
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, values);
 
 
@@ -56,24 +55,16 @@ public class CartaActivity extends AppCompatActivity {
                 // ListView Clicked item value
                 String  itemValue   = (String) listView.getItemAtPosition(position);
 
-                if (cart.indexOf(itemValue) == -1) {
-                    cart.add(itemValue);
-                    // Show Alert
-                    Toast.makeText(getApplicationContext(),
-                            itemValue +" afegit", Toast.LENGTH_LONG)
-                            .show();
-                } else {
-                    Toast.makeText(getApplicationContext(),
-                            itemValue +" ja estava afegits", Toast.LENGTH_LONG)
-                            .show();
-                }
+                cart.add(itemValue);
+                // Show Alert
+                Toast.makeText(getApplicationContext(),
+                        itemValue +" afegit", Toast.LENGTH_LONG)
+                        .show();
             }
 
         });
 
-        searchButton = (Button) findViewById(R.id.search_button);
-
-        homeButton = (ImageButton)findViewById(R.id.home_button);
+        homeButton = (ImageButton) findViewById(R.id.home_button);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,19 +81,9 @@ public class CartaActivity extends AppCompatActivity {
         });
     }
 
-    public ArrayList<String> findItems (String text){
-        ArrayList<String> arr = new ArrayList<String>();
-        Pattern pattern = Pattern.compile(text);
-        for (String s: values) {
-            if (pattern.matcher(s).matches()) {
-                arr.add(s);
-            }
-        }
-        return arr;
-    }
-
-    public void changeIntent(Class c){
+    public void changeIntent(Class c, String[] values){
         Intent intent = new Intent(this, c);
+        intent.putExtra("carta", values);
         startActivity(intent);
     }
 }
