@@ -6,4 +6,6 @@
     <string name="carta_button">Carta</string>
     <string name="buy_button">Comprar</string>
     <string name="delete_button">Treu Tot</string>
+    <string name="delete_toast">Cancel·lat.</string>
+    <string name="buy_toast">Comprat.</string>
 </resources>
