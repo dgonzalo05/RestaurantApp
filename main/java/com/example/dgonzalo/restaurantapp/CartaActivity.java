@@ -59,7 +59,7 @@ public class CartaActivity extends AppCompatActivity {
                     cart.add(nombre);
                     // Show Alert
                     Toast.makeText(getApplicationContext(),
-                            nombre + " añadido", Toast.LENGTH_LONG)
+                            nombre + " afegit", Toast.LENGTH_LONG)
                             .show();
                 }
             }
