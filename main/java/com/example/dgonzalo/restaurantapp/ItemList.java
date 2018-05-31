@@ -1,21 +1,28 @@
 package com.example.dgonzalo.restaurantapp;
 
 public class ItemList {
-    protected long id;
     protected String nombre;
-    protected String tipo;
+    protected boolean titol;
+    protected long id;
+    private static long nextId = 0;
 
     public ItemList() {
         this.nombre = "";
-        this.tipo = "";
+        this.titol = false;
+        this.id = nextId++;
     }
 
-    public ItemList(long id, String nombre, String tipo) {
-        this.id = id;
+    public ItemList(String nombre) {
         this.nombre = nombre;
-        this.tipo = tipo;
+        this.titol = false;
+        this.id = nextId++;
     }
 
+    public ItemList(String nombre, boolean titol) {
+        this.nombre = nombre;
+        this.titol = titol;
+        this.id = nextId++;
+    }
 
     public long getId() {
         return id;
@@ -33,11 +40,7 @@ public class ItemList {
         this.nombre = nombre;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public boolean isTitol() {
+        return titol;
     }
 }

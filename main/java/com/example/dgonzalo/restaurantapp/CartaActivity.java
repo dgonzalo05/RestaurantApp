@@ -54,12 +54,14 @@ public class CartaActivity extends AppCompatActivity {
                 // ListView Clicked item value
                 ItemList item   = (ItemList) listView.getItemAtPosition(position);
                 String nombre = item.getNombre();
+                if (!item.isTitol() && !nombre.isEmpty()) {
 
-                cart.add(nombre);
-                // Show Alert
-                Toast.makeText(getApplicationContext(),
-                        nombre + " añadido", Toast.LENGTH_LONG)
-                        .show();
+                    cart.add(nombre);
+                    // Show Alert
+                    Toast.makeText(getApplicationContext(),
+                            nombre + " añadido", Toast.LENGTH_LONG)
+                            .show();
+                }
             }
 
         });
@@ -96,18 +98,25 @@ public class CartaActivity extends AppCompatActivity {
     private ArrayList<ItemList> crearCarta() {
         ArrayList<ItemList> items = new ArrayList<ItemList>();
 
-        items.add(new ItemList(1, "Amanida", "Primer"));
-        items.add(new ItemList(1, "Macarrons", "Primer"));
-        items.add(new ItemList(1, "Paella", "Primer"));
-        items.add(new ItemList(2, "Entrecot", "Segon"));
-        items.add(new ItemList(2, "Pizza", "Segon"));
-        items.add(new ItemList(2, "Peix al forn", "Segon"));
-        items.add(new ItemList(3, "Iogurt", "Postre"));
-        items.add(new ItemList(3, "Gelat", "Postre"));
-        items.add(new ItemList(3, "Trufes", "Postre"));
-        items.add(new ItemList(3, "Cola", "Beguda"));
-        items.add(new ItemList(3, "Vi", "Beguda"));
-        items.add(new ItemList(3, "Cervesa", "Beguda"));
+        items.add(new ItemList("Primers", true));
+        items.add(new ItemList("Amanida" ));
+        items.add(new ItemList("Macarrons" ));
+        items.add(new ItemList("Paella" ));
+        items.add(new ItemList());
+        items.add(new ItemList("Segons", true ));
+        items.add(new ItemList("Entrecot" ));
+        items.add(new ItemList("Pizza" ));
+        items.add(new ItemList("Peix al forn" ));
+        items.add(new ItemList());
+        items.add(new ItemList("Postres", true ));
+        items.add(new ItemList("Iogurt" ));
+        items.add(new ItemList("Gelat"));
+        items.add(new ItemList("Trufes"));
+        items.add(new ItemList());
+        items.add(new ItemList("Begudes", true));
+        items.add(new ItemList("Cola"));
+        items.add(new ItemList("Vi"));
+        items.add(new ItemList("Cervesa"));
 
         return items;
     }

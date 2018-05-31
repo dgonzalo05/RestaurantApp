@@ -39,19 +39,20 @@ public class ItemAdapter extends BaseAdapter {
     public View getView(int position, View contentView, ViewGroup parent) {
         View vi=contentView;
 
+        ItemList item = items.get(position);
+
         if(contentView == null) {
             LayoutInflater inflater = (LayoutInflater) activity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            vi = inflater.inflate(R.layout.list_item_layout, null);
+            if (item.isTitol()) {
+                vi = inflater.inflate(R.layout.list_title_layout, null);
+            } else {
+                vi = inflater.inflate(R.layout.list_item_layout, null);
+            }
         }
-
-        ItemList item = items.get(position);
 
         TextView nombre = (TextView) vi.findViewById(R.id.nombre);
         nombre.setText(item.getNombre());
-
-        TextView tipo = (TextView) vi.findViewById(R.id.tipo);
-        tipo.setText(item.getTipo());
 
         return vi;
     }
